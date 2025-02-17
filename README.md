@@ -37,6 +37,31 @@
           <App />
     </Provider>
 
+
+
+## Redux  Most Important interview  Question 
+* What is Redux, and why is it used in React applications?
+*  Explain the core principles of Redux (Actions, Reducers, Store).
+*  What is a Redux Store? How is it different from React component state?
+*  Describe the flow of data in a Redux application.
+*  Why is immutability important in Redux, and how is it achieved?
+*  What are Redux Actions and Action Creators?
+*  Explain the role of Reducers in Redux.
+*  What is a Redux Selector? Why and when would you use it?
+*  Discuss the difference between Redux Thunk and Redux Saga for handling async actions.
+*  What is a Redux Middleware? Provide examples of commonly used middlewares.
+*  Explain the purpose of a middleware like redux-thunk in Redux.uuuuuuuuuu
+*  How does a middleware handle actions in the Redux flow?
+*  What are the main features of Redux Toolkit?
+*  Explain the concept of ‘slices’ in Redux Toolkit.
+*  Why might someone prefer using RTK over traditional Redux?
+*  Discuss the benefits of using createSlice() in Redux Toolkit.
+*  How does RTK simplify the Redux setup compared to traditional Redux?
+*  Discuss the concept of Redux state normalization and its advantages.
+*  Explain the idea of time-travel debugging with Redux DevTools.
+*  How does memoization play a role in Redux selectors for performance optimization?
+*  Discuss the potential drawbacks of overusing Redux in small to medium-sized applications.
+*  Explain the differences between action creators and action types in Redux.
 ## Authors
 
 - [@Ashutosh kumar](https://github.com/Ashukr321)
