@@ -5,25 +5,3 @@
   --webkit-font-smoothing:antialiased;
   text-rendering: optimizeLegibility;
 }
-body{
-  background-color:black;
-  display:flex;
-  justify-content: center;
-  align-items:center;
-  height:100vh;
-}
-
-h1{
-  color:white;
-  font-size:2.5rem;
-}
-
-
-.btn{
-  width:140px;
-  height:40px;
-  background:white;
-  color:black;
-  cursor:pointer;
-  font-size: 1.2rem;;
-}

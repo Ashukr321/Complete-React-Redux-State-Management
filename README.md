@@ -1,86 +1,54 @@
+# React + TypeScript + Vite
 
-![Logo](Resources/Redux_logo.svg)
-# Complete React-Redux-Toolkit State Management 🚀
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Redux-Toolkit  
-* RTK resolves many of the arguments related to boilerplate and unnecessary code
-*  it helps to solve three major problems people had with Redux
-  
->  Configuring a Redux store is too complicated” \
-   “I have to add a lot of packages to get Redux to do anything useful” \
-   “Redux requires too much boilerplate code”
-* RTK’s API to make our Redux applications smaller yet still powerful
-### Install redux-toolkit   
-        npm install @reduxjs/toolkit
-### you need React bindings
+Currently, two official plugins are available:
 
-## Installation
-        npm install react-redux
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## What's Included
-### Redux Toolkit includes these APIs 🚀
-1. configureStore() \
-   wraps createStore to provide simplified configuration options and good defaults. \
-   It can automatically combine your slice reducers, adds whatever Redux middleware you supply,\
-   includes redux-thunk by default, and enables use of the Redux DevTools Extension.
+## Expanding the ESLint configuration
 
-* In simple words this is use for creating the store, and it also, hold all the reducers 
-* it Also includes Redux middleware Redux thunk by default for the asynchronous task like fetching the data from api , and All
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-*  ⭐⭐🚀 After creating this store we must have to provide to all application we can easily access in whole application 
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-### Import Provider  (Provides Our Store to Application);
-    import { Provider } from 'react-redux';
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-    <Provider store={store}>
-          <App />
-    </Provider>
-
-
-
-## Redux  Most Important interview  Question 
-* What is Redux, and why is it used in React applications?
-*  Explain the core principles of Redux (Actions, Reducers, Store).
-*  What is a Redux Store? How is it different from React component state?
-*  Describe the flow of data in a Redux application.
-*  Why is immutability important in Redux, and how is it achieved?
-*  What are Redux Actions and Action Creators?
-*  Explain the role of Reducers in Redux.
-*  What is a Redux Selector? Why and when would you use it?
-*  Discuss the difference between Redux Thunk and Redux Saga for handling async actions.
-*  What is a Redux Middleware? Provide examples of commonly used middlewares.
-*  Explain the purpose of a middleware like redux-thunk in Redux.uuuuuuuuuu
-*  How does a middleware handle actions in the Redux flow?
-*  What are the main features of Redux Toolkit?
-*  Explain the concept of ‘slices’ in Redux Toolkit.
-*  Why might someone prefer using RTK over traditional Redux?
-*  Discuss the benefits of using createSlice() in Redux Toolkit.
-*  How does RTK simplify the Redux setup compared to traditional Redux?
-*  Discuss the concept of Redux state normalization and its advantages.
-*  Explain the idea of time-travel debugging with Redux DevTools.
-*  How does memoization play a role in Redux selectors for performance optimization?
-*  Discuss the potential drawbacks of overusing Redux in small to medium-sized applications.
-*  Explain the differences between action creators and action types in Redux.
-## Authors
-
-- [@Ashutosh kumar](https://github.com/Ashukr321)
-
-
-
-## 🔗 Links
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://modern-portfolio-phi-rouge.vercel.app/)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ashutosh-kumar-7ba1a6211/)
-[![instagram](https://img.shields.io/badge/instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/ashukr321/)
-
-
-## 🚀 About Me
-I'm ASHUTOSH KUMAR FULLSTACK DEVELOPER 
-
-I specialize in creating modern and responsive web applications. With a strong passion for FULLSTACK development, I bring creative solutions to life through code and design. Additionally, I am a winner 🏆 of the GDG Patna WEB Hackathon
-
-
-## Acknowledgements
-
- * Ashutosh kumar for creating and maintaining this repository.
-
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```
