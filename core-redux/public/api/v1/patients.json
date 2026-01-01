@@ -1,0 +1,14 @@
+[
+  {
+    "id": "P001",
+    "name": "Rahul Kumar",
+    "department": "Cardiology",
+    "status": "Admitted"
+  },
+  {
+    "id": "P002",
+    "name": "Anita Sharma",
+    "department": "OPD",
+    "status": "Admitted"
+  }
+]
